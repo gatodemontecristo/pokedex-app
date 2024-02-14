@@ -10,7 +10,6 @@ export const LoginPage = () => {
       replace: true
   });
   }
-
   return (
     <AuthLayout title="Login">
       <div className="card__login">
