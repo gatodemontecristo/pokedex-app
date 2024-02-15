@@ -6,5 +6,5 @@ export const PokeChildRoutes =  [
     { path: "detail", element: <PokeDetailPage></PokeDetailPage> },
     { path: "search", element: <PokeSearchPage></PokeSearchPage> },
     { path: "/*", element: <Navigate to="/search" /> },
-    { path: "/", element: <Navigate to="/login" /> },
+    { path: "/", element: <Navigate to="/search" /> },
   ];

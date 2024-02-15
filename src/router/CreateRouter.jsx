@@ -2,6 +2,8 @@ import { CheckingAuth } from "../ui";
 import { AuthChildRoutes, AuthRoutes } from "../auth";
 import { PokeChildRoutes, PokeRoutes } from "../pokedex";
 import { useSelector } from "react-redux";
+import { PublicRoute } from "./PublicRoute";
+import { PrivateRoute } from "./PrivateRoute";
 
 export const CreateRouter = () => {
   const { status } = useSelector((state) => state.auth);
@@ -17,12 +19,12 @@ export const CreateRouter = () => {
     return [
       {
         path: "/auth",
-        element: <AuthRoutes></AuthRoutes>,
+        element: <PublicRoute><AuthRoutes></AuthRoutes></PublicRoute>,
         children: AuthChildRoutes,
       },
       {
         path: "/",
-        element: <PokeRoutes />,
+        element: <PrivateRoute><PokeRoutes /></PrivateRoute>,
         children: PokeChildRoutes,
       },
     ];
