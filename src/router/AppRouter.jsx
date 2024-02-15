@@ -1,21 +1,11 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { AuthChildRoutes, AuthRoutes } from "../auth";
-import { PokeChildRoutes, PokeRoutes } from "../pokedex";
+import { CreateRouter } from "./CreateRouter";
 
-const router = createBrowserRouter([
-  {
-    path: "/auth",
-    element: <AuthRoutes></AuthRoutes>,
-    children: AuthChildRoutes,
-  },
-  {
-    path: "/",
-    element: <PokeRoutes />,
-    children: PokeChildRoutes,
-  },
-]);
+
+
 
 export const AppRouter = () => {
+  const router = createBrowserRouter(CreateRouter());
   return (
     <>
       <RouterProvider router={router} />
