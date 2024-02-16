@@ -1,15 +1,22 @@
 import { useNavigate } from "react-router-dom";
 import { AuthLayout } from "../layout/AuthLayout"
 import "../styles/myLogin.css";
+import { startGoogleSignIn } from "../../store";
+import { useDispatch} from 'react-redux';
 
 export const LoginPage = () => {
-
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const onNavigateRegister = () =>{
     navigate('/auth/register',{
       replace: true
   });
   }
+
+  const onGoogleSignIn = () =>{
+    dispatch(startGoogleSignIn());
+  }
+
   return (
     <AuthLayout title="Login">
       <div className="card__login">
@@ -48,7 +55,7 @@ export const LoginPage = () => {
             </div>
             <div className="card__login__form__container__buttons w-100">
             <button type="button" className="card__login__form__container__buttons--login btn btn-warning">LOGIN</button>
-            <button type="button" className="card__login__form__container__buttons--social btn btn-warning"><i className="bi bi-google"></i></button>
+            <button type="button" onClick={onGoogleSignIn} className="card__login__form__container__buttons--social btn btn-warning"><i className="bi bi-google"></i></button>
             <button type="button" className="card__login__form__container__buttons--social btn btn-warning"><i className="bi bi-facebook"></i></button>
             <button type="button" className="card__login__form__container__buttons--social btn btn-warning"><i className="bi bi-linkedin"></i></button>
             </div>  

@@ -1,6 +1,7 @@
+import "../style/PokeSpinner.scss";
 
 export const CheckingAuth = () => {
-  return (
-    <h1>CheckingAuth 2024</h1>
-  )
-}
+  return <div className="spinnerContainer">
+    <div class="o-pokeball c-loader u-bounce"></div>
+  </div>
+};

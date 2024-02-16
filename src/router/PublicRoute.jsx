@@ -1,9 +1,9 @@
-import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom"
+import { useCheckAuth } from "../hooks";
 
 export const PublicRoute = ({children}) => {
 
-    const { status } = useSelector((state) => state.auth);
+    const { status } = useCheckAuth();
       
 
     return (status !== "authenticated")

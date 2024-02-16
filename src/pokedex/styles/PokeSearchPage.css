@@ -1,0 +1,26 @@
+.search{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.search__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60%;
+}
+.search__container__title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+.search__container__title--text{
+    font-size: 40px;
+    font-weight: 700;
+}
+.search__container__title--img{
+    width: 28px;
+    height: 28px;
+}

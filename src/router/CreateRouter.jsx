@@ -1,12 +1,12 @@
 import { CheckingAuth } from "../ui";
 import { AuthChildRoutes, AuthRoutes } from "../auth";
 import { PokeChildRoutes, PokeRoutes } from "../pokedex";
-import { useSelector } from "react-redux";
 import { PublicRoute } from "./PublicRoute";
 import { PrivateRoute } from "./PrivateRoute";
+import { useCheckAuth } from "../hooks";
 
 export const CreateRouter = () => {
-  const { status } = useSelector((state) => state.auth);
+  const { status } = useCheckAuth();
 
   if (status === "checking") {
     return [
