@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export const pokeSlice = createSlice({
-    name: "pokedex",
+    name: "poke",
     initialState: {
-      isLoading: false,
+      isLoading: true,
       messageSaved: "",
       pokedex: [],
     },
@@ -11,13 +11,27 @@ export const pokeSlice = createSlice({
         loadPokemon: (state) => {
           state.isLoading = true;
         },
-        addNewPokemon: (state, action) => {
-            state.pokedex.push(action.payload);
+        addCollectionPokemons: (state, action) => {
+            state.pokedex = action.payload;
             state.isLoading = false;
         },
-        deletePokemonById: (state, action) => {
-            state.pokedex = state.pokedex.filter(pokemon=>pokemon.id!==action.payload);
-            state.isLoading = false;
-        },
+        sortAlphabetically: (state) => {
+          state.pokedex = state.pokedex.sort((a, b) =>{
+            if (a.name < b.name) {
+              return -1;
+            }
+            if (a.name > b.name) {
+              return 1;
+            }
+            return 0;
+          });
+          state.isLoading = false;
+      },
+      sortByNumber: (state) => {
+        state.pokedex = state.pokedex.sort((a, b) => b.id-a.id).reverse();
+        state.isLoading = false;
     }
-})
+    }
+});
+
+export const { loadPokemon,addCollectionPokemons,sortAlphabetically,sortByNumber } = pokeSlice.actions;
