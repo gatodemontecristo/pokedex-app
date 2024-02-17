@@ -1,0 +1,39 @@
+
+.search__container__pokemons__card__text--types--tag{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.518);
+    border-radius: 15px;
+    padding: 10px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+.search__container__pokemons__card__text--types--tag img{
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    border: 1px solid white;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.search__container__pokemons__card__text--types--tag--p{
+    display: flex;
+    flex-direction: column;
+    
+}
+.search__container__pokemons__card__text--types--tag--p h4{
+    font-size: 15px;
+    font-weight: 400;
+}
+.search__container__pokemons__card__text--types--tag--p p{
+    font-size: 15px;
+    font-weight: 700;
+}
