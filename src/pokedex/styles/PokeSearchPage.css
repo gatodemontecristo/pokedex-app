@@ -36,6 +36,11 @@
     flex-wrap: wrap;
 
 }
+.search__container__region a{
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+}
 .search__container__region__card{
     display: flex;
     flex-direction: row;
@@ -52,6 +57,22 @@
     background-color: #eaeaea;
     filter: grayscale(100%);
 }
+.search__container__region__card.seleccionado{
+    background-color: #ffc107;
+    filter: grayscale(0%);
+    box-shadow: 0 1px 32px #171620;
+}
+.search__container__region__card.disableClass{
+    pointer-events:none;
+}
+.btn-group.disableClass{
+    pointer-events:none;
+}
+.btn-warning.disableClass{
+    pointer-events:none;
+}
+
+
 .search__container__region__card:hover{
     background-color: #ffc107;
     filter: grayscale(0%);
@@ -90,4 +111,27 @@
     justify-content: center;
     gap: 15px;
     flex-wrap: wrap;
+}
+
+
+
+.search__container__filter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:center;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.search__container__filter__orden{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    gap: 10px
+}
+
+.checkList{
+    display: flex;
+    flex-direction: column;
 }

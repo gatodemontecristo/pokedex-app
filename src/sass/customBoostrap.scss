@@ -34,6 +34,10 @@ p {
     border: 2px solid rgb(120, 120, 120);
     border-left: 0px;
 }
+.btn-group > .btn, .btn-group-vertical > .btn {
+    font-weight: bold;
+}
+
 .input-group {
 
 }
