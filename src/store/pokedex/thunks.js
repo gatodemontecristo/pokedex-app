@@ -3,9 +3,9 @@ import { addCollectionPokemons, loadPokemon, sortAlphabetically, sortByNumber } 
 
 export const loadPokedex = (region=1)=>{
     return async(dispatch) =>{
-        // dispatch( loadPokemon());
-        // const result = await getPokemons(region);
-        // dispatch(addCollectionPokemons(result));
-        // dispatch(sortByNumber());
+        dispatch( loadPokemon());
+        const result = await getPokemons(region);
+        dispatch(addCollectionPokemons(result));
+        dispatch(sortByNumber());
     }
 }

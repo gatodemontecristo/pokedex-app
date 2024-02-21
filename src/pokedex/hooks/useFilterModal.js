@@ -43,6 +43,7 @@ export const useFilterModal = () => {
 
     return {
         poketypeslist,
+        poketypes,
         show,
         handleShow,
         handleClose,

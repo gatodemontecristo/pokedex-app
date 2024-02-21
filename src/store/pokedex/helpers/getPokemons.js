@@ -13,7 +13,6 @@ export const getPokemons = async (region) => {
       }
     });
     const results = await Promise.all(promises);
-    console.log(results);
     //    return pokemonArray;
     return results;
   } catch (err) {

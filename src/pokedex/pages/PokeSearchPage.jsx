@@ -6,12 +6,11 @@ import { useFilterModal, useFilterRegion } from "../hooks";
 
 export const PokeSearchPage = () => {
   // const { pokemones, isLoading } = useFetchPokemons(1);
-  // console.log(pokemones);
   
-  const {poketypeslist,show,handleShow,handleClose,onChangePokeType,onSaveChangesTypes} = useFilterModal();
+  const {poketypes,poketypeslist,show,handleShow,handleClose,onChangePokeType,onSaveChangesTypes} = useFilterModal();
   const {region,pokedex,isLoading,search,onChangeSearch,onChangeRegion,onChangeOrder} = useFilterRegion();
       
-
+  const filtersTypes = poketypes.filter(type=>type.selected);
   return (
     <div className="search">
       <div className="search__container">
@@ -163,9 +162,14 @@ export const PokeSearchPage = () => {
           </div>
 
           <button
-            className={`btn btn-warning ${isLoading ? " disableClass" : ""}` } onClick={handleShow}
+            className={`btn btn-warning position-relative ${isLoading ? " disableClass" : ""}` } onClick={handleShow}
           >
             <i className="bi bi-filter-square-fill"></i>
+
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+    {filtersTypes.length}
+  </span>
+
           </button>
         </div>
 
@@ -188,7 +192,7 @@ export const PokeSearchPage = () => {
             {pokedex
               .filter((pokemon) => {
                 if (!!pokemon) {
-                  return pokemon.name.includes(search);
+                  return (pokemon.name.includes(search) && filtersTypes.every(element  => pokemon.types.some(({type}) => type.name  === element.name)));
                 } else {
                   return false;
                 }
