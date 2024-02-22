@@ -1,0 +1,136 @@
+.pokeContent{
+    margin: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+.pokeInfo{
+    width: 40%;
+    background-color: #3FA129;
+    border-radius: 40px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
+}
+.pokeInfo__primary{
+    display: flex;
+    flex-direction: column;
+    padding: 40px 20px 0px 20px;
+    position: relative;
+   
+    
+}
+.pokeInfo__primary__aqua--pokeball{
+    position: absolute;
+    width: 300px;
+    opacity: 0.2;
+    bottom: -80px;
+    right:  -80px;
+    z-index: 0;
+}
+
+.pokeInfo__primary__header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.pokeInfo__primary__nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.pokeInfo__primary__nav__info{
+    display: flex;
+    flex-direction: column;
+}
+.pokeInfo__primary__nav__info--name{
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: 700;
+}
+.pokeInfo__primary__nav__number{
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.pokeInfo__primary__nav__info__types{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.pokeInfo__primary--img{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    z-index: 25;
+    position: relative;
+}
+.pokeInfo__primary--img--hiden{
+    width: 60%;
+    visibility: hidden;
+}
+.pokeInfo__primary--img--real{
+    width: 70%;
+    position: absolute;
+    bottom: -70px;
+    z-index: 25;
+}
+
+
+
+.pokeInfo__secondary{
+    background-color: #f6f6f6;
+    border-radius: 40px;
+    padding: 50px 20px;
+    position: relative;
+    z-index: 0;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
+}
+.pokeInfo__secondary__tab__form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.pokeInfo__secondary__tab__form__line{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+.pokeInfo__secondary__tab__form__line h3{
+    color: #3c3c3c;
+    font-size: 13px;
+    font-weight: 500;
+    width: 20%;
+}
+.pokeInfo__secondary__tab__form__line p{
+    color: #000000;
+    font-size: 13px;
+    font-weight: 500;
+    width: 80%;
+
+}
+.pokeInfo__secondary__tab__form_subtitle{
+    color: #000000;
+    font-size: 20px;
+    font-weight: 800;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.pokeInfo__tab__form__line{
+    display: flex;
+    flex-direction: row;  
+    align-items: center;
+   
+}

@@ -14,6 +14,7 @@ export const getPokemons = async (region) => {
     });
     const results = await Promise.all(promises);
     //    return pokemonArray;
+    console.log(results);
     return results;
   } catch (err) {
     console.log(err);

@@ -1,0 +1,34 @@
+.pokeInfo__secondary__tab__text--types--tag{
+    background-color: rgba(255, 255, 255, 0.149);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    padding: 10px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+.pokeInfo__secondary__tab__text--types--tag img{
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.pokeInfo__secondary__tab__text--types--tag--p{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    
+}
+
+.pokeInfo__secondary__tab__text--types--tag--p p{
+    font-size: 15px;
+    font-weight: 500;
+}
