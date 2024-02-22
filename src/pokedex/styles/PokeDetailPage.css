@@ -7,7 +7,7 @@
 }
 .pokeInfo{
     width: 40%;
-    background-color: #3FA129;
+    overflow: hidden;
     border-radius: 40px;
     -webkit-border-radius: 40px;
     -moz-border-radius: 40px;
@@ -30,11 +30,20 @@
     right:  -80px;
     z-index: 0;
 }
+.pokeInfo__primary__aqua--type{
+    position: absolute;
+    width: 300px;
+    opacity: 0.1;
+    top: -80px;
+    right:  -80px;
+    z-index: 0;
+}
 
 .pokeInfo__primary__header{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    z-index: 15;
 }
 .pokeInfo__primary__nav{
     display: flex;
@@ -45,6 +54,7 @@
 .pokeInfo__primary__nav__info{
     display: flex;
     flex-direction: column;
+    gap: 5px;
 }
 .pokeInfo__primary__nav__info--name{
     color: #ffffff;
@@ -95,6 +105,9 @@
     -ms-border-radius: 40px;
     -o-border-radius: 40px;
 }
+.pokeInfo__secondary__tab{
+    padding: 20px;
+}
 .pokeInfo__secondary__tab__form{
     display: flex;
     flex-direction: column;
@@ -119,6 +132,36 @@
     font-size: 13px;
     font-weight: 500;
     width: 80%;
+
+}
+.pokeInfo__secondary__tab__form__progress_defText{
+    color: #000000;
+    font-size: 13px;
+    font-weight: 500;
+    width: 80%;
+    margin-top: 20px;
+}
+.pokeInfo__secondary__tab__form__progress{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.pokeInfo__secondary__tab__form__progress h3{
+    color: #3c3c3c;
+    font-size: 13px;
+    font-weight: 500;
+    width: 20%;
+}
+.pokeInfo__secondary__tab__form__progress p{
+    color: #000000;
+    font-size: 13px;
+    font-weight: 500;
+    width: 20%;
+}
+.pokeInfo__secondary__tab__form__progress .progress{
+    
+    width: 60%;
 
 }
 .pokeInfo__secondary__tab__form_subtitle{

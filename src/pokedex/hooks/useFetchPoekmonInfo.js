@@ -3,7 +3,7 @@ import { getPokemonInfo } from "../helpers";
 
 
 export const useFetchPoekmonInfo = (poke_id) => {
-    const [pokeInfo, setpokeInfo] = useState({});
+    const [pokeInfo, setpokeInfo] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
     const getDetails = async () => {

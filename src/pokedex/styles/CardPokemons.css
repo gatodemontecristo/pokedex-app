@@ -1,3 +1,8 @@
+.search__container__pokemons__card--a{
+    width: 30%;
+    text-decoration: none;
+    color: inherit; 
+}
 .search__container__pokemons__card{
     display: flex;
     flex-direction: column;
@@ -9,7 +14,7 @@
     -moz-border-radius: 15px;
     -ms-border-radius: 15px;
     -o-border-radius: 15px;
-    width: 30%;
+    width: 100%;
 }
 .search__container__pokemons__card__img{
     width: 100%;
@@ -17,6 +22,14 @@
     position: relative;
    
 }
+.search__container__pokemons__card__img:hover{
+   
+    -webkit-animation: shakeY 1s;
+    animation: shakeY 1s;
+}
+
+
+
 .search__container__pokemons__card__img img{
     width: 100%;
     position: absolute;
