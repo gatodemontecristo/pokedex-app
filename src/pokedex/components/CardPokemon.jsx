@@ -8,9 +8,9 @@ export const CardPokemon = (pokemon) => {
     return pokeTypes[firstType];
   }
   const formatNumber = (number) =>{
-    if(number>=10){
+    if(number>=10 && number<100){
       return "0"+number
-    }else if(number>=1){
+    }else if(number<10 && number>=1){
       return "00"+number
     }else{
       return number

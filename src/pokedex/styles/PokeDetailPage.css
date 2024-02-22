@@ -177,3 +177,13 @@
     align-items: center;
    
 }
+.pokeInfo__secondary__tab--tag--list{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;  
+    justify-content: center;
+   align-items: center;
+   gap: 10px;
+   margin-top: 20px;
+    margin-bottom: 20px;
+}

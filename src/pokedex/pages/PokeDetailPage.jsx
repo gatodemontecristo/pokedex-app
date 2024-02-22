@@ -1,16 +1,16 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useFetchPoekmonInfo } from "../hooks";
 import "../styles/PokeDetailPage.css";
-import { TagPokemonvs2 } from "../components";
+import { TagAbilities, TagPokemonvs2 } from "../components";
 import { pokeTypes } from "../types/pokeTypes";
 export const PokeDetailPage = () => {
   const { pokeId } = useParams();
   console.log(pokeId);
   const { pokeInfo, isLoading } = useFetchPoekmonInfo(pokeId);
   const formatNumber = (number) => {
-    if (number >= 10) {
+    if (number >= 10 && number < 100) {
       return "0" + number;
-    } else if (number >= 1) {
+    } else if (number < 10 && number >= 1) {
       return "00" + number;
     } else {
       return number;
@@ -356,13 +356,19 @@ export const PokeDetailPage = () => {
                   </div>
                 </div>
                 <div
-                  className="tab-pane fade"
+                  className="pokeInfo__secondary__tab tab-pane fade"
                   id="contact-tab-pane"
                   role="tabpanel"
                   aria-labelledby="contact-tab"
                   tabIndex="0"
                 >
-                  ...
+                  <div className="pokeInfo__secondary__tab--tag--list">
+                    {pokeInfo[2].map((type, index) => {
+                      return (
+                        <TagAbilities key={index} name={type.location_area.name} typeTag="location"></TagAbilities>
+                      );
+                    })}
+                  </div>
                 </div>
                 <div
                   className="tab-pane fade"
@@ -371,7 +377,13 @@ export const PokeDetailPage = () => {
                   aria-labelledby="disabled-tab"
                   tabIndex="0"
                 >
-                  ...
+                   <div className="pokeInfo__secondary__tab--tag--list">
+                    {pokeInfo[0].moves.map((type, index) => {
+                      return (
+                        <TagAbilities key={index} name={type.move.name} typeTag="movement"></TagAbilities>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
             </div>
