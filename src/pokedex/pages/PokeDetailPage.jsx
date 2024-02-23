@@ -11,7 +11,7 @@ export const PokeDetailPage = () => {
   return (
     <>
       {isLoading ? (
-        <span className="loader"></span>
+          <span className="loader2"></span>
       ) : (
         <div className="pokeContent">
           <div

@@ -1,12 +1,14 @@
 import { useDispatch, useSelector } from "react-redux";
 import { loadPokedex, sortAlphabetically, sortByNumber } from "../../store";
-import { useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 export const useFilterRegion = () => {
 
     const { pokedex, isLoading } = useSelector((state) => state.poke);
     const dispatch = useDispatch();
     const [search, setSearch] = useState("");
-    const [region, setRegion] = useState(1);
+
+    const lastRegion = localStorage.getItem('lastRegion') || 1;
+    const [region, setRegion] = useState(lastRegion);
     
   
     const onChangeSearch = (event) => {
@@ -14,22 +16,34 @@ export const useFilterRegion = () => {
       setSearch(event.target.value);
     };
   
+    // useEffect(() => {
+    //   dispatch(loadPokedex(region));
+    // }, [region]);
+    const lastOrder = localStorage.getItem('lastOrder2') || "true";
+    const [order, setorder] = useState(JSON.parse(lastOrder) === true);
+
     useEffect(() => {
-      dispatch(loadPokedex(region));
+      dispatch(loadPokedex(region,order));
     }, [region]);
   
     const onChangeRegion = (numberRegion, event) => {
       event.preventDefault();
       setRegion(numberRegion);
+      localStorage.setItem('lastRegion',numberRegion);
     };
-  
-    const onChangeOrder = (event) => {
-      if (event.target.id == "btnradio1") {
-        dispatch(sortByNumber());
-      } else {
-        dispatch(sortAlphabetically());
-      }
-    };
+    
+
+  const onChangeOrder = () =>{
+    if(order){
+     
+      dispatch(sortAlphabetically());
+    }else{
+      dispatch(sortByNumber());
+     
+    }
+    setorder(!order);
+    localStorage.setItem('lastOrder2',!order);
+  }
     return{
       region,
         pokedex,
@@ -37,6 +51,7 @@ export const useFilterRegion = () => {
         search,
         onChangeSearch,
         onChangeRegion,
-        onChangeOrder
+        onChangeOrder,
+        order
     }
 }

@@ -1,7 +1,7 @@
 
 import { useDispatch, useSelector } from "react-redux";
 import { updateStatePokeType } from "../../store";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 
 
 export const useFilterModal = () => {
@@ -14,9 +14,9 @@ export const useFilterModal = () => {
   const { poketypes } = useSelector((state) => state.poke);
   const [poketypeslist, setpoketypeslist] = useState(poketypes.slice());
   const dispatch = useDispatch();
-  useEffect(() => {
-    setpoketypeslist(poketypes.slice());
-  }, [show]);
+  // useEffect(() => {
+  //   setpoketypeslist(poketypes.slice());
+  // }, [show]);
 
   const onChangePokeType = (poketype, event) => {
     let arreglo = poketypeslist.filter((item) => item.selected);
@@ -38,6 +38,7 @@ export const useFilterModal = () => {
 
   const onSaveChangesTypes = ()=>{
     dispatch(updateStatePokeType(poketypeslist));
+    localStorage.setItem('lastOrder',JSON.stringify(poketypeslist))
     handleClose();
     }
 

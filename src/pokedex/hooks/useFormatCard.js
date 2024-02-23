@@ -21,14 +21,10 @@ export const useFormatCard = (pokemonId=1) => {
       const navigate = useNavigate();
     
       const onNavigateSearch = () => {
-        navigate("/search", {
-          replace: true,
-        });
+        navigate("/search");
       };
       const onNavigatePokeDetail = () => {
-        navigate(`/detail/${pokemonId}`, {
-          replace: true,
-        });
+        navigate(`/detail/${pokemonId}`);
       };
 
       return{

@@ -1,12 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+
 export const pokeSlice = createSlice({
   name: "poke",
   initialState: {
     isLoading: false,
     messageSaved: "",
     pokedex: [],
-    poketypes: [
+    poketypes:  JSON.parse(localStorage.getItem('lastOrder')) || [
       { name: "bug", color: "#818F16", selected: false },
       { name: "dark", color: "#50413F", selected: false },
       { name: "dragon", color: "#5060E1", selected: false },

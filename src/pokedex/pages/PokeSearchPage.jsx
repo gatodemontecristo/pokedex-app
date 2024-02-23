@@ -4,8 +4,9 @@ import "../styles/PokeSearchPage.css";
 import "../styles/Spinner.css";
 import { useFilterModal, useFilterRegion } from "../hooks";
 
+
+
 export const PokeSearchPage = () => {
-  // const { pokemones, isLoading } = useFetchPokemons(1);
 
   const {
     poketypes,
@@ -24,9 +25,15 @@ export const PokeSearchPage = () => {
     onChangeSearch,
     onChangeRegion,
     onChangeOrder,
+    order
   } = useFilterRegion();
 
+
   const filtersTypes = poketypes.filter((type) => type.selected);
+  
+
+  
+  
   return (
     <div className="search">
       <div className="search__container">
@@ -148,28 +155,29 @@ export const PokeSearchPage = () => {
             <div
               className={`btn-group ${isLoading ? " disableClass" : ""}`}
               role="group"
-              aria-label="Basic radio toggle button group"
-              onClick={(e) => {
-                onChangeOrder(e);
-              }}
+              aria-label="Basic checkbox toggle button group"
+            
             >
               <input
-                type="radio"
+                type="checkbox"
                 className="btn-check"
                 name="btnradio"
                 id="btnradio1"
                 autoComplete="off"
-                defaultChecked
+                checked={order}
+                onChange={onChangeOrder}
               />
               <label className="btn btn-outline-warning" htmlFor="btnradio1">
                 Indice <i className="bi bi-123"></i>
               </label>
               <input
-                type="radio"
+                type="checkbox"
                 className="btn-check "
                 name="btnradio"
                 id="btnradio2"
                 autoComplete="off"
+                checked={!order}
+                onChange={onChangeOrder}
               />
               <label className="btn btn-outline-warning" htmlFor="btnradio2">
                 Nombre <i className="bi bi-alphabet"></i>
