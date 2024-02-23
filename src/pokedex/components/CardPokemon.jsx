@@ -1,27 +1,10 @@
-import { useNavigate } from 'react-router-dom';
 import '../styles/CardPokemons.css'
-import { pokeTypes } from '../types/pokeTypes';
 import { TagPokemon } from './TagPokemon';
+import { useFormatCard } from '../hooks';
 export const CardPokemon = (pokemon) => {
 
-  const cardColor = (firstType)=>{
-    return pokeTypes[firstType];
-  }
-  const formatNumber = (number) =>{
-    if(number>=10 && number<100){
-      return "0"+number
-    }else if(number<10 && number>=1){
-      return "00"+number
-    }else{
-      return number
-    }
-}
-const navigate = useNavigate();
-const onNavigatePokeDetail = () => {
-  navigate(`/detail/${pokemon.id}`, {
-    replace: true,
-  });
-};
+
+const { cardColor, formatNumber, onNavigatePokeDetail } =  useFormatCard(pokemon.id);
   return (
     <a href="" onClick={onNavigatePokeDetail} className="search__container__pokemons__card--a">
     <div   className="search__container__pokemons__card animate__animated animate__bounceInUp" style={{backgroundColor:`${cardColor(pokemon.types[0].type.name)}`}}>

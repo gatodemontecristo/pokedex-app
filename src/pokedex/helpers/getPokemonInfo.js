@@ -7,7 +7,6 @@ export const getPokemonInfo = async (pokeId) => {
       const promesa3 = await fetch(`${baseURL}pokemon/${pokeId}/encounters`).then(response => response.json());
 
       const results = await Promise.all([promesa1,promesa2,promesa3]);
-      console.log(results);
       return results;
     } catch (err) {
       console.log(err);

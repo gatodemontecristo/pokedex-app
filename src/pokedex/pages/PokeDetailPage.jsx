@@ -1,34 +1,12 @@
-import { useNavigate, useParams } from "react-router-dom";
-import { useFetchPoekmonInfo } from "../hooks";
+import {  useParams } from "react-router-dom";
+import { useFetchPoekmonInfo, useFormatCard } from "../hooks";
 import "../styles/PokeDetailPage.css";
 import { TagAbilities, TagPokemonvs2 } from "../components";
-import { pokeTypes } from "../types/pokeTypes";
+
 export const PokeDetailPage = () => {
   const { pokeId } = useParams();
-  console.log(pokeId);
   const { pokeInfo, isLoading } = useFetchPoekmonInfo(pokeId);
-  const formatNumber = (number) => {
-    if (number >= 10 && number < 100) {
-      return "0" + number;
-    } else if (number < 10 && number >= 1) {
-      return "00" + number;
-    } else {
-      return number;
-    }
-  };
-  const cardColor = (firstType) => {
-    return pokeTypes[firstType];
-  };
-  const formatHW = (value) => {
-    return value / 10;
-  };
-  const navigate = useNavigate();
-
-  const onNavigateSearch = () => {
-    navigate("/search", {
-      replace: true,
-    });
-  };
+  const { formatNumber, cardColor, formatHW,onNavigateSearch } =  useFormatCard();
 
   return (
     <>
@@ -37,7 +15,7 @@ export const PokeDetailPage = () => {
       ) : (
         <div className="pokeContent">
           <div
-            className="pokeInfo"
+            className="pokeInfo animate__animated animate__backInLeft"
             style={{
               backgroundColor: `${cardColor(pokeInfo[0].types[0].type.name)}`,
             }}
@@ -212,10 +190,7 @@ export const PokeDetailPage = () => {
                     ) : (
                       <p></p>
                     )}
-                    {/* <div className="pokeInfo__secondary__tab__form__line">
-                      <h3>Egg Cycle</h3>
-                      <p>{pokeInfo[1].egg_groups[1].name}</p>
-                    </div> */}
+                 
                   </div>
                 </div>
                 <div
