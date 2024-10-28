@@ -1,12 +1,13 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { startLogout } from "../../store";
 import "../style/NavBar.css";
 export const NavBar = () => {
   const dispatch = useDispatch();
   const handleLogout = () => {
     dispatch(startLogout());
-    console.log("handleLogout");
   };
+  const { email, displayName, photoURL } = useSelector((state) => state.auth);
+  console.log(email, displayName, photoURL);
   return (
     <nav className="navbar__container">
       <button type="button" className="btn btn-warning">
@@ -14,11 +15,16 @@ export const NavBar = () => {
       </button>
       <img src="../menu.png" alt="" className="navbar__container--logo" />
       <div className="navbar__container__user">
-        <p className="navbar__container__user--name">Naki Dejo</p>
+        <div>
+          <p className="navbar__container__user--name">{displayName}</p>
+          <p className="navbar__container__user--name">{email}</p>
+        </div>
         <img
           className="navbar__container__user--img"
-          src="../persona.jpg"
-          alt=""
+          src={photoURL || "../persona.jpg"}
+          // onError={(e) => {
+          //   e.currentTarget.src = "../persona.jpg";
+          // }}
         />
         <button
           type="button"
