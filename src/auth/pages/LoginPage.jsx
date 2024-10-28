@@ -4,11 +4,13 @@ import "../styles/myLogin.css";
 import { startGoogleSignIn, startLoginWithEmailPassword } from "../../store";
 import { useDispatch } from "react-redux";
 import { useFormik } from "formik";
+
 import * as Yup from "yup";
 
 export const LoginPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
   const onNavigateRegister = () => {
     navigate("/auth/register", {
       replace: true,

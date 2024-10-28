@@ -7,6 +7,7 @@ import "bootstrap/dist/js/bootstrap.js";
 import "./sass/customBoostrap.scss";
 import "bootstrap-icons/font/bootstrap-icons.min.css";
 import "animate.css/animate.min.css";
+import "notyf/notyf.min.css";
 import { Provider } from "react-redux";
 import { store } from "./store";
 
