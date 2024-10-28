@@ -4,11 +4,13 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import "../styles/myRegister.css";
 import { useDispatch } from "react-redux";
+
 import { startCreatingUserWithEmailPassword } from "../../store";
 
 export const RegisterPage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
   const onNavigateLogin = () => {
     navigate("/auth/login", {
       replace: true,

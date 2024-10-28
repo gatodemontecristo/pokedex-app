@@ -29,7 +29,12 @@ export const LoginPage = () => {
       password: Yup.string().required("La contraseña es un valor requerido"),
     }),
     onSubmit: (values) => {
-      dispatch(startLoginWithEmailPassword(values.email, values.password));
+      dispatch(
+        startLoginWithEmailPassword({
+          email: values.email,
+          password: values.password,
+        })
+      );
     },
   });
 
