@@ -10,9 +10,6 @@ export const NavBar = () => {
   console.log(email, displayName, photoURL);
   return (
     <nav className="navbar__container">
-      <button type="button" className="btn btn-warning">
-        <i className="bi bi-list"></i>
-      </button>
       <img src="../menu.png" alt="" className="navbar__container--logo" />
       <div className="navbar__container__user">
         <div>
@@ -22,9 +19,6 @@ export const NavBar = () => {
         <img
           className="navbar__container__user--img"
           src={photoURL || "../persona.jpg"}
-          // onError={(e) => {
-          //   e.currentTarget.src = "../persona.jpg";
-          // }}
         />
         <button
           type="button"

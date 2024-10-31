@@ -1,19 +1,20 @@
-
-.auth__container{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    min-Height: 100vh;    
-    background-color: #092AC8;
+.auth__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #092ac8;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../../../public/poke-background.png");
 }
-.auth__container__card{
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    width: 30%;
+.auth__container__card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 30%;
 }
-.auth__container__card--title{
-    color: #ffc107;
-    font-weight: bold;
+.auth__container__card--title {
+  color: #ffc107;
+  font-weight: bold;
 }
