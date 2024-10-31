@@ -18,3 +18,15 @@
   color: #ffc107;
   font-weight: bold;
 }
+
+@media (max-width: 1024px) and (min-width: 748px) {
+  .auth__container__card {
+    width: 50%;
+  }
+}
+
+@media (max-width: 748px) {
+  .auth__container__card {
+    width: 80%;
+  }
+}
