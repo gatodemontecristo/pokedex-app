@@ -1,61 +1,131 @@
-.search__container__pokemons__card--a{
-    width: 30%;
-    text-decoration: none;
-    color: inherit; 
+.search__container__pokemons__card--a {
+  width: 30%;
+  text-decoration: none;
+  color: inherit;
 }
-.search__container__pokemons__card{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 15px;
-    border-radius: 15px;
-    margin-top: 150px;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    -ms-border-radius: 15px;
-    -o-border-radius: 15px;
-    width: 100%;
+.search__container__pokemons__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
+  border-radius: 15px;
+  margin-top: 150px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  width: 100%;
 }
-.search__container__pokemons__card__img{
-    width: 100%;
-    height: 100px;
-    position: relative;
-   
+.search__container__pokemons__card__img {
+  width: 100%;
+  height: 100px;
+  position: relative;
 }
-.search__container__pokemons__card__img:hover{
-   
-    -webkit-animation: shakeY 1s;
-    animation: shakeY 1s;
+.search__container__pokemons__card__img:hover {
+  -webkit-animation: shakeY 1s;
+  animation: shakeY 1s;
 }
 
+.search__container__pokemons__card__img img {
+  width: 100%;
+  position: absolute;
+  top: -150px;
+}
+.search__container__pokemons__card__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.search__container__pokemons__card__text h2 {
+  color: #ffffff5f;
+  font-size: 60px;
+  font-weight: 900;
+  letter-spacing: 5px;
+}
+.search__container__pokemons__card__text h3 {
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 700;
+}
+.search__container__pokemons__card__text--types {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
 
-
-.search__container__pokemons__card__img img{
+@media (max-width: 1024px) and (min-width: 748px) {
+  .search__container__pokemons__card__img img {
     width: 100%;
     position: absolute;
-    top:-150px;
-}
-.search__container__pokemons__card__text{
+    top: -100px;
+  }
+  .search__container__pokemons__card {
+    padding: 10px;
+    margin-top: 100px;
+    width: 100%;
+  }
+  .search__container__pokemons__card__img {
+    width: 100%;
+    height: 60px;
+    position: relative;
+  }
+  .search__container__pokemons__card__text h2 {
+    color: #ffffff5f;
+    font-size: 40px;
+  }
+  .search__container__pokemons__card__text h3 {
+    color: #ffffff;
+    font-size: 20px;
+  }
+  .search__container__pokemons__card__text--types {
     display: flex;
     flex-direction: column;
-    align-items: center;
-}
-.search__container__pokemons__card__text h2{
-    color: #ffffff5f;
-    font-size: 60px;
-    font-weight: 900;
-    letter-spacing: 5px;
-}
-.search__container__pokemons__card__text h3{
-    color: #ffffff;
-    font-size: 30px;
-    font-weight: 700;
-}
-.search__container__pokemons__card__text--types{
-    margin-top: 10px;
-    display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 5px;
+  }
+}
+
+@media (max-width: 748px) {
+  .search__container__pokemons__card--a {
+    width: 45%;
+  }
+  .search__container__pokemons__card__img img {
+    width: 100%;
+    position: absolute;
+    top: -100px;
+  }
+  .search__container__pokemons__card {
+    padding: 10px;
+    margin-top: 100px;
+    width: 100%;
+  }
+  .search__container__pokemons__card__img {
+    width: 100%;
+    height: 30px;
+    position: relative;
+  }
+  .search__container__pokemons__card {
+    padding: 10px;
+    margin-top: 100px;
+    width: 100%;
+  }
+  .search__container__pokemons__card__text h2 {
+    color: #ffffff5f;
+    font-size: 35px;
+  }
+  .search__container__pokemons__card__text h3 {
+    color: #ffffff;
+    font-size: 20px;
+  }
+  .search__container__pokemons__card__text--types {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
 }
