@@ -2,9 +2,14 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { CheckItem } from "./CheckItem";
 
-
-export const ModalFilter = ({ poketypeslist,show, handleClose,onChangePokeType,onSaveChangesTypes }) => {
-
+// eslint-disable-next-line react/prop-types
+export const ModalFilter = ({
+  poketypeslist,
+  show,
+  handleClose,
+  onChangePokeType,
+  onSaveChangesTypes,
+}) => {
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>

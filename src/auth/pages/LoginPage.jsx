@@ -108,12 +108,14 @@ export const LoginPage = () => {
               </button>
               <button
                 type="button"
+                disabled
                 className="card__login__form__container__buttons--social btn btn-warning"
               >
                 <i className="bi bi-facebook"></i>
               </button>
               <button
                 type="button"
+                disabled
                 className="card__login__form__container__buttons--social btn btn-warning"
               >
                 <i className="bi bi-linkedin"></i>

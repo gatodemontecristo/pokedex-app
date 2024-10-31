@@ -4,10 +4,7 @@ import "../styles/PokeSearchPage.css";
 import "../styles/Spinner.css";
 import { useFilterModal, useFilterRegion } from "../hooks";
 
-
-
 export const PokeSearchPage = () => {
-
   const {
     poketypes,
     poketypeslist,
@@ -25,15 +22,11 @@ export const PokeSearchPage = () => {
     onChangeSearch,
     onChangeRegion,
     onChangeOrder,
-    order
+    order,
   } = useFilterRegion();
 
-
   const filtersTypes = poketypes.filter((type) => type.selected);
-  
 
-  
-  
   return (
     <div className="search">
       <div className="search__container">
@@ -156,7 +149,6 @@ export const PokeSearchPage = () => {
               className={`btn-group ${isLoading ? " disableClass" : ""}`}
               role="group"
               aria-label="Basic checkbox toggle button group"
-            
             >
               <input
                 type="checkbox"
@@ -233,6 +225,30 @@ export const PokeSearchPage = () => {
               })}
           </div>
         )}
+        {!isLoading &&
+          pokedex
+            .filter((pokemon) => {
+              if (!!pokemon) {
+                return (
+                  pokemon.name.includes(search) &&
+                  filtersTypes.every((element) =>
+                    pokemon.types.some(({ type }) => type.name === element.name)
+                  )
+                );
+              } else {
+                return false;
+              }
+            })
+            .map((pokemon, index) => {
+              return <CardPokemon key={index} {...pokemon}></CardPokemon>;
+            }).length === 0 && (
+            <div className="search_not_found">
+              <img className="search_not_found--img" src="../meme.jpg" alt="" />
+              <p className="search_not_found--text">
+                No se encontró ningún pokemon :(
+              </p>
+            </div>
+          )}
       </div>
     </div>
   );

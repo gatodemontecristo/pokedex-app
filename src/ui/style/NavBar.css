@@ -1,13 +1,17 @@
 .navbar__container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: end;
   align-items: center;
   background-color: #092ac8;
   padding: 5px 80px 5px 80px;
+  position: relative;
 }
 .navbar__container--logo {
   width: 220px;
+  position: absolute;
+  left: 50%; /* Mueve la imagen al centro horizontal */
+  transform: translateX(-50%); /* Centra la imagen ajustando su posición */
 }
 .navbar__container__user {
   display: flex;
@@ -29,4 +33,10 @@
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+}
+
+@media (max-width: 768px) {
 }
